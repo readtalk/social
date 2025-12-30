@@ -93,7 +93,7 @@ function App() {
 			<h1>READTalk Society</h1>
 			{counter !== 0 ? (
 				<p>
-					<b>{counter}</b> {counter === 1 ? "person" : "people"} connected.
+					<b>{counter}</b> {counter === 1 ? "people" : "people"} Online.
 				</p>
 			) : (
 				<p>&nbsp;</p>
