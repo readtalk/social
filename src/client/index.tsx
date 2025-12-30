@@ -90,7 +90,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1>READTalk Social Fediverse</h1>
+			<h1>READTalk Fediverse</h1>
 			{counter !== 0 ? (
 				<p>
 					<b>{counter}</b> {counter === 1 ? "person" : "people"} connected.
