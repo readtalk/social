@@ -107,8 +107,8 @@ function App() {
 
 			{/* Let's give some credit */}
 			<p>
-				Powered by
-				<a href="https://readtalk.vercel.app/">READTalk</a> /{" "}
+				© 2025 {" "}
+				<a href="https://readtalk.vercel.app/">READTalk Inc</a> /{" "}
 				<a href="https://soeparnocorp.github.io/">SOEPARNO ENTERPRISE Corp</a>
 				<a href="https://cobe.vercel.app/"></a>{" "}
 				<a href="https://www.npmjs.com/package/phenomenon"></a>{" "}
