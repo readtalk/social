@@ -93,7 +93,7 @@ function App() {
 			<h1>READTalk Society</h1>
 			{counter !== 0 ? (
 				<p>
-					<b>{counter}</b> {counter === 1 ? "People" : "people"} ON 🔴
+					<b>{counter}</b> {counter === 1 ? "+" : "people"} ONLINE 🔴
 				</p>
 			) : (
 				<p>&nbsp;</p>
@@ -108,8 +108,8 @@ function App() {
 			{/* Let's give some credit */}
 			<p>
 				© 2025 {" "}
-				<a href="https://readtalk.vercel.app/">READTalk Inc</a> /{" "}
-				<a href="https://soeparnocorp.github.io/">SOEPARNO ENTERPRISE Corp</a>
+				<a href="https://readtalk.vercel.app/">READTalk Inc.</a> /{" "}
+				<a href="https://soeparnocorp.github.io/">SOEPARNO ENTERPRISE Corp.</a>
 				<a href="https://cobe.vercel.app/"></a>{" "}
 				<a href="https://www.npmjs.com/package/phenomenon"></a>{" "}
 				<a href="https://npmjs.com/package/partyserver/"></a>
