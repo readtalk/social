@@ -1,0 +1,42 @@
+{
+	"compatibility_date": "2025-10-08",
+	"main": "src/server/index.ts",
+	"name": "social",
+	"migrations": [
+		{
+			"new_sqlite_classes": ["Globe"],
+			"tag": "v1"
+		}
+	],
+	"assets": {
+		"directory": "public"
+	},
+	"build": {
+		"command": "npx esbuild src/client/index.tsx --bundle --outdir=public/dist --splitting --sourcemap --format=esm"
+	},
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "Globe",
+				"name": "Globe"
+			}
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "SOCIAL_DB",
+			"database_name": "log_db",
+			"database_id": "b8be1d52-2ba4-4468-9c59-661420fdf408"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "SOCIAL_KV",
+			"id": "2717482567924ee2a095f3548a07c520"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"upload_source_maps": true
+}
