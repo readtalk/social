@@ -1,4 +1,4 @@
-export function DashboardHTML(user: { id: string; email: string }) {
+export function SettingsHTML(user: { id: string; email: string }) {
   return `<!DOCTYPE html>
 <html>
 <head>
