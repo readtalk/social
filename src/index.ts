@@ -32,7 +32,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/dashboard") {
+    if (url.pathname === "/settings") {
       const cookieHeader = request.headers.get("Cookie") || "";
       const cookies = Object.fromEntries(
         cookieHeader.split("; ").filter(Boolean).map((c) => {
