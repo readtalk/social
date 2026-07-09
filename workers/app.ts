@@ -4,7 +4,7 @@ import { PasswordProvider } from "@openauthjs/openauth/provider/password";
 import { PasswordUI } from "@openauthjs/openauth/ui/password";
 import { createSubjects } from "@openauthjs/openauth/subject";
 import { object, string } from "valibot";
-import { DashboardHTML } from "../app/dashboard";
+import { SettingsHTML } from "../app/settings";
 
 const subjects = createSubjects({
   user: object({
@@ -20,7 +20,7 @@ export default {
       url.searchParams.set("redirect_uri", url.origin + "/callback");
       url.searchParams.set("client_id", "your-client-id");
       url.searchParams.set("response_type", "code");
-      url.searchParams.set("state", "/dashboard");
+      url.searchParams.set("state", "/settings");
       url.pathname = "/authorize";
       return Response.redirect(url.toString());
     }
@@ -32,7 +32,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/dashboard") {
+    if (url.pathname === "/settings") {
       const cookieHeader = request.headers.get("Cookie") || "";
       const cookies = Object.fromEntries(
         cookieHeader.split("; ").filter(Boolean).map((c) => {
@@ -56,7 +56,7 @@ export default {
         return Response.redirect("/");
       }
 
-      return new Response(DashboardHTML(user), {
+      return new Response(SettingsHTML(user), {
         headers: { "Content-Type": "text/html" },
       });
     }
@@ -100,7 +100,7 @@ export default {
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": "/dashboard",
+            "Location": "/settings",
             "Set-Cookie": `userId=${userId}; HttpOnly; Max-Age=${60 * 60 * 24 * 7}; Path=/`,
           },
         });
