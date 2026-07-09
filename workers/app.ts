@@ -86,7 +86,7 @@ export default {
         ),
       },
       theme: {
-        title: "Authentication",
+        title: "READTalk - Authentication",
         primary: "#FF0000",
         favicon: "#",
         logo: {
