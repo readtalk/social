@@ -1,8 +1,8 @@
-export function DashboardHTML(user: { id: string; email: string }) {
+export function SettingsHTML(user: { id: string; email: string }) {
   return `<!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard</title>
+  <title>Settings</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,7 +14,7 @@ export function DashboardHTML(user: { id: string; email: string }) {
         ${user.email[0].toUpperCase()}
       </div>
       <div>
-        <h1 class="text-2xl font-bold">Welcome!</h1>
+        <h1 class="text-2xl font-bold">Settings</h1>
         <p class="text-gray-600">${user.email}</p>
       </div>
     </div>
