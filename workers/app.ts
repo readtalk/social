@@ -70,7 +70,7 @@ export default {
 
     return issuer({
       storage: CloudflareStorage({
-        namespace: env.AUTH_STORAGE,
+        namespace: env.KV,
       }),
       subjects,
       providers: {
@@ -110,7 +110,7 @@ export default {
 } satisfies ExportedHandler<Env>;
 
 async function getOrCreateUser(env: Env, email: string): Promise<string> {
-  const result = await env.AUTH_DB.prepare(
+  const result = await env.DB.prepare(
     `
     INSERT INTO user (email)
     VALUES (?)
