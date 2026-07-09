@@ -2,7 +2,7 @@
 	"name": "server",
 	"description": "Deploy an OpenAuth server on Cloudflare Workers.",
 	"cloudflare": {
-		"label": "OpenAuth Server",
+		"label": "OpenAuth",
 		"products": [
 			"Workers",
 			"D1",
