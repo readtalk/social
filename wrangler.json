@@ -1,7 +1,7 @@
 {
 	"compatibility_date": "2025-10-08",
 	"main": "workers/app.ts",
-	"name": "server",
+	"name": "social",
 	"upload_source_maps": true,
 	"kv_namespaces": [
 		{
