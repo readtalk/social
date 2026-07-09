@@ -1,6 +1,6 @@
 {
 	"compatibility_date": "2025-10-08",
-	"main": "app/routes/auth/index.ts",
+	"main": "workers/index.ts",
 	"name": "server",
 	"upload_source_maps": true,
 	"kv_namespaces": [
