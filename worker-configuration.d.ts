@@ -6,7 +6,7 @@ declare namespace Cloudflare {
 		mainModule: typeof import("./workers/app");
 	}
 	interface Env {
-		AUTH_STORAGE: KVNamespace;
+		AUTH_KV: KVNamespace;
 		AUTH_DB: D1Database;
 	}
 }
