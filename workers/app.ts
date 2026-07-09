@@ -46,7 +46,7 @@ export default {
         return Response.redirect("/");
       }
 
-      const user = await env.DB.prepare(
+      const user = await env.AUTH_DB.prepare(
         "SELECT id, email FROM user WHERE id = ?"
       )
         .bind(userId)
@@ -70,7 +70,7 @@ export default {
 
     return issuer({
       storage: CloudflareStorage({
-        namespace: env.KV,
+        namespace: env.AUTH_STORAGE,
       }),
       subjects,
       providers: {
@@ -110,7 +110,7 @@ export default {
 } satisfies ExportedHandler<Env>;
 
 async function getOrCreateUser(env: Env, email: string): Promise<string> {
-  const result = await env.DB.prepare(
+  const result = await env.AUTH_DB.prepare(
     `
     INSERT INTO user (email)
     VALUES (?)
