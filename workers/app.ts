@@ -46,7 +46,7 @@ export default {
         return Response.redirect("/");
       }
 
-      const user = await env.AUTH_DB.prepare(
+      const user = await env.DB.prepare(
         "SELECT id, email FROM user WHERE id = ?"
       )
         .bind(userId)
@@ -86,7 +86,7 @@ export default {
         ),
       },
       theme: {
-        title: "READTalk - Authentication",
+        title: "Authentication",
         primary: "#FF0000",
         favicon: "#",
         logo: {
