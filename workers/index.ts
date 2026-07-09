@@ -86,8 +86,8 @@ export default {
         ),
       },
       theme: {
-        title: "READTalk OpenAuth",
-        primary: "#ff0000",
+        title: "Authentication",
+        primary: "#FF0000",
         favicon: "#",
         logo: {
           dark: "#",
