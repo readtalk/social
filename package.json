@@ -1,8 +1,8 @@
 {
-	"name": "server",
-	"description": "Deploy an OpenAuth server on Cloudflare Workers.",
+	"name": "social",
+	"description": "Deploy an Authentication server on Cloudflare Workers.",
 	"cloudflare": {
-		"label": "OpenAuth",
+		"label": "Authentication",
 		"products": [
 			"Workers",
 			"D1",
