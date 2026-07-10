@@ -86,7 +86,7 @@ export default {
         ),
       },
       theme: {
-        title: "Authentication",
+        title: "Auth",
         primary: "#FF0000",
         favicon: "#",
         logo: {
