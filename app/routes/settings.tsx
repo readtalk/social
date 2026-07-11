@@ -4,9 +4,8 @@ export function SettingsHTML(user: { id: string; email: string }) {
 <head>
   <title>Settings | READTalk</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
   
-  <!-- 🔥 Favicon dari public/ -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   
   <script src="https://cdn.tailwindcss.com"></script>
