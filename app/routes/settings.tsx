@@ -6,7 +6,7 @@ export function SettingsHTML(user: { id: string; email: string }) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />  
   
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
   
   <script src="https://cdn.tailwindcss.com"></script>
   <meta name="theme-color" content="#FF0000" />
