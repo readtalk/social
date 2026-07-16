@@ -1,5 +1,5 @@
 /* ============================================
-   PUBLIC/STYLE.CSS - ReadTalk Auth App
+   PUBLIC/GLOBAL.CSS - ReadTalk Auth App
    Pure CSS, no build process needed
    ============================================ */
 
@@ -154,7 +154,7 @@ body {
   }
 }
 
-/* ---------- DARK MODE (optional) ---------- */
+/* ---------- DARK MODE ---------- */
 @media (prefers-color-scheme: dark) {
   body {
     background: #111827;
@@ -188,5 +188,13 @@ body {
 
   .user-details {
     border-top-color: #374151;
+  }
+
+  .btn-logout {
+    background: #dc2626;
+  }
+
+  .btn-logout:hover {
+    background: #b91c1c;
   }
 }
