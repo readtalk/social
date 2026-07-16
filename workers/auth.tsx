@@ -56,7 +56,7 @@ export default {
         return Response.redirect("/");
       }
 
-      return new Response(SettingsHTML(user), {
+      return new Response(HomeHTML(user), {
         headers: { "Content-Type": "text/html" },
       });
     }
