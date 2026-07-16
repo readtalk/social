@@ -1,10 +1,11 @@
+// workers/auth //
 import { issuer } from "@openauthjs/openauth";
 import { CloudflareStorage } from "@openauthjs/openauth/storage/cloudflare";
 import { PasswordProvider } from "@openauthjs/openauth/provider/password";
 import { PasswordUI } from "@openauthjs/openauth/ui/password";
 import { createSubjects } from "@openauthjs/openauth/subject";
 import { object, string } from "valibot";
-import { HomeHTML } from "../public/index";
+import { HomeHTML } from "../public/home";
 
 const subjects = createSubjects({
   user: object({
@@ -20,7 +21,7 @@ export default {
       url.searchParams.set("redirect_uri", url.origin + "/callback");
       url.searchParams.set("client_id", "your-client-id");
       url.searchParams.set("response_type", "code");
-      url.searchParams.set("state", "/index");
+      url.searchParams.set("state", "/home");
       url.pathname = "/authorize";
       return Response.redirect(url.toString());
     }
@@ -32,7 +33,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/index") {
+    if (url.pathname === "/home") {
       const cookieHeader = request.headers.get("Cookie") || "";
       const cookies = Object.fromEntries(
         cookieHeader.split("; ").filter(Boolean).map((c) => {
@@ -100,7 +101,7 @@ export default {
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": "/index",
+            "Location": "/home",
             "Set-Cookie": `userId=${userId}; HttpOnly; Max-Age=${60 * 60 * 24 * 7}; Path=/`,
           },
         });
