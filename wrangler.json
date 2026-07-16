@@ -1,7 +1,7 @@
 {
 	"compatibility_date": "2025-10-08",
 	"main": "workers/auth.tsx",
-	"name": "social",
+	"name": "society",
 	"upload_source_maps": true,
 	"kv_namespaces": [
 		{
