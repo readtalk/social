@@ -1,47 +1,85 @@
+// public/home.tsx
 export function HomeHTML(user: { id: string; email: string }) {
+  // Ambil waktu sekarang untuk ditampilkan (contoh)
+  const currentTime = new Date().toLocaleString("id-ID", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   return `<!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Homepage</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  
-  <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
-  
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FF0000" />
-  <style>
-    body { background: #f0f2f5; }
-    .readtalk-card { background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-  </style>
+  <meta name="description" content="ReadTalk - Dashboard Autentikasi" />
+
+  <title>ReadTalk | Beranda</title>
+
+  <!-- CSS Standar (tanpa build process) -->
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+
+  <!-- Font Inter dari Google Fonts (opsional, fallback sudah di CSS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
-  <div class="readtalk-card p-8 max-w-md w-full">
-    <div class="flex items-center gap-4 mb-6">
-      <div class="w-14 h-14 rounded-full bg-[#FF0000] flex items-center justify-center text-white text-2xl font-bold shadow-md">
-        RT
+
+<body>
+  <main class="readtalk-card" role="main" aria-labelledby="profile-heading">
+    
+    <!-- HEADER PROFIL -->
+    <header class="profile-header">
+      <div class="avatar" aria-hidden="true">RT</div>
+      <div class="user-info">
+        <h1 id="profile-heading">Dashboard</h1>
+        <p class="email">${user.email}</p>
       </div>
-      <div>
-        <h1 class="text-2xl font-bold text-gray-900">Settings</h1>
-        <p class="text-gray-600">${user.email}</p>
+    </header>
+
+    <!-- DETAIL AKUN -->
+    <section class="user-details" aria-label="Detail akun">
+      <div class="detail-row">
+        <span class="label">ID Pengguna</span>
+        <span class="value">${user.id}</span>
       </div>
-    </div>
-    <div class="border-t border-gray-100 pt-4 space-y-2">
-      <div class="flex justify-between text-sm">
-        <span class="text-gray-500">User ID</span>
-        <span class="font-mono text-gray-700">${user.id}</span>
+      <div class="detail-row">
+        <span class="label">Email</span>
+        <span class="value">${user.email}</span>
       </div>
-      <div class="flex justify-between text-sm">
-        <span class="text-gray-500">Email</span>
-        <span class="text-gray-700">${user.email}</span>
+      <div class="detail-row">
+        <span class="label">Status</span>
+        <span class="value" style="color: #22c55e; font-weight: 500;">✓ Aktif</span>
       </div>
-    </div>
-    <div class="mt-6">
-      <a href="/logout" class="w-full inline-block text-center bg-[#FF0000] text-white px-4 py-2.5 rounded-lg hover:bg-[#CC0000] transition font-medium">
-        Logout
-      </a>
-    </div>
-  </div>
+      <div class="detail-row">
+        <span class="label">Login pada</span>
+        <span class="value" style="font-family: inherit;">${currentTime}</span>
+      </div>
+    </section>
+
+    <!-- TOMBOL LOGOUT -->
+    <a href="/logout" class="btn-logout">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:0.5rem;">
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+        <polyline points="16 17 21 12 16 7" />
+        <line x1="21" y1="12" x2="9" y2="12" />
+      </svg>
+      Keluar
+    </a>
+
+    <!-- FOOTER KECIL -->
+    <footer style="margin-top: 2rem; text-align: center; font-size: 0.75rem; color: #6b7280; border-top: 1px solid #f3f4f6; padding-top: 1rem;">
+      <p>© ${new Date().getFullYear()} ReadTalk — Aman & Terpercaya</p>
+    </footer>
+  </main>
 </body>
 </html>`;
 }
