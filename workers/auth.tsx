@@ -32,7 +32,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/") {
+    if (url.pathname === "/index") {
       const cookieHeader = request.headers.get("Cookie") || "";
       const cookies = Object.fromEntries(
         cookieHeader.split("; ").filter(Boolean).map((c) => {
@@ -56,7 +56,7 @@ export default {
         return Response.redirect("/");
       }
 
-      return new Response(HomeHTML(user), {
+      return new Response(SettingsHTML(user), {
         headers: { "Content-Type": "text/html" },
       });
     }
@@ -100,7 +100,7 @@ export default {
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": "/",
+            "Location": "/index",
             "Set-Cookie": `userId=${userId}; HttpOnly; Max-Age=${60 * 60 * 24 * 7}; Path=/`,
           },
         });
