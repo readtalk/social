@@ -1,6 +1,6 @@
 /* ============================================
    PUBLIC/GLOBAL.CSS - ReadTalk Auth App
-   Pure CSS, no build process needed
+   Pure CSS, no build process needed.
    ============================================ */
 
 /* ---------- RESET & BASE ---------- */
@@ -22,7 +22,7 @@ body {
   color: #111827;
 }
 
-/* ---------- CARD COMPONENT ---------- */
+/* ---------- CARD ---------- */
 .readtalk-card {
   background: #ffffff;
   border-radius: 16px;
@@ -37,7 +37,7 @@ body {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* ---------- PROFILE HEADER ---------- */
+/* ---------- HEADER ---------- */
 .profile-header {
   display: flex;
   align-items: center;
@@ -73,7 +73,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* ---------- USER DETAILS ---------- */
+/* ---------- DETAILS ---------- */
 .user-details {
   border-top: 1px solid #f3f4f6;
   padding-top: 1rem;
@@ -101,7 +101,7 @@ body {
   max-width: 60%;
 }
 
-/* ---------- BUTTON ---------- */
+/* ---------- LOGOUT BUTTON ---------- */
 .btn-logout {
   display: inline-block;
   width: 100%;
