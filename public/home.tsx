@@ -9,9 +9,9 @@ export function HomeHTML(user: { id: string; email: string }) {
   <meta name="description" content="ReadTalk - Dashboard" />
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="./favicon.ico" />
   
-  <link rel="stylesheet" href="/global.css" />
+  <link rel="stylesheet" href="./global.css" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
