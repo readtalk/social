@@ -1,16 +1,192 @@
-@import "tailwindcss" source(".");
+/* ============================================
+   PUBLIC/STYLE.CSS - ReadTalk Auth App
+   Pure CSS, no build process needed
+   ============================================ */
 
-@theme {
-	--font-sans:
-		"Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* ---------- RESET & BASE ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
 body {
-	@apply bg-white dark:bg-gray-950;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  line-height: 1.5;
+  color: #111827;
+}
 
-	@media (prefers-color-scheme: dark) {
-		color-scheme: dark;
-	}
+/* ---------- CARD COMPONENT ---------- */
+.readtalk-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  transition: box-shadow 0.2s ease;
+}
+
+.readtalk-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- PROFILE HEADER ---------- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  background: #ff0000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-info h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.user-info .email {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ---------- USER DETAILS ---------- */
+.user-details {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.detail-row .label {
+  color: #6b7280;
+}
+
+.detail-row .value {
+  font-family: "SF Mono", "Fira Code", monospace;
+  color: #111827;
+  word-break: break-all;
+  text-align: right;
+  max-width: 60%;
+}
+
+/* ---------- BUTTON ---------- */
+.btn-logout {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background: #ff0000;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s ease, transform 0.1s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-logout:hover {
+  background: #cc0000;
+}
+
+.btn-logout:active {
+  transform: scale(0.97);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .readtalk-card {
+    padding: 1.5rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-info h1 {
+    font-size: 1.25rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .detail-row .value {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+/* ---------- DARK MODE (optional) ---------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111827;
+    color: #f9fafb;
+  }
+
+  .readtalk-card {
+    background: #1f2937;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .readtalk-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .user-info h1 {
+    color: #f9fafb;
+  }
+
+  .user-info .email {
+    color: #9ca3af;
+  }
+
+  .detail-row .label {
+    color: #9ca3af;
+  }
+
+  .detail-row .value {
+    color: #f9fafb;
+  }
+
+  .user-details {
+    border-top-color: #374151;
+  }
 }
