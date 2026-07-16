@@ -4,7 +4,7 @@ import { PasswordProvider } from "@openauthjs/openauth/provider/password";
 import { PasswordUI } from "@openauthjs/openauth/ui/password";
 import { createSubjects } from "@openauthjs/openauth/subject";
 import { object, string } from "valibot";
-import { HomeHTML } from "../app/routes/Home";
+import { HomeHTML } from "../public/index";
 
 const subjects = createSubjects({
   user: object({
@@ -20,7 +20,7 @@ export default {
       url.searchParams.set("redirect_uri", url.origin + "/callback");
       url.searchParams.set("client_id", "your-client-id");
       url.searchParams.set("response_type", "code");
-      url.searchParams.set("state", "/Home");
+      url.searchParams.set("state", "/index");
       url.pathname = "/authorize";
       return Response.redirect(url.toString());
     }
@@ -32,7 +32,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/Home") {
+    if (url.pathname === "/") {
       const cookieHeader = request.headers.get("Cookie") || "";
       const cookies = Object.fromEntries(
         cookieHeader.split("; ").filter(Boolean).map((c) => {
@@ -100,7 +100,7 @@ export default {
         return new Response(null, {
           status: 302,
           headers: {
-            "Location": "/Home",
+            "Location": "/",
             "Set-Cookie": `userId=${userId}; HttpOnly; Max-Age=${60 * 60 * 24 * 7}; Path=/`,
           },
         });
