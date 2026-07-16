@@ -1,6 +1,6 @@
 /* ============================================
    PUBLIC/GLOBAL.CSS - ReadTalk Auth App
-   Pure CSS, no build process needed.
+   Pure CSS, no build process needed
    ============================================ */
 
 /* ---------- RESET & BASE ---------- */
@@ -101,7 +101,7 @@ body {
   max-width: 60%;
 }
 
-/* ---------- LOGOUT BUTTON ---------- */
+/* ---------- BUTTON ---------- */
 .btn-logout {
   display: inline-block;
   width: 100%;
