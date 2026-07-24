@@ -10,7 +10,7 @@ export function HomeHTML(user: { id: string; email: string }) {
   <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
   
   <!-- Hanya ini yang berubah: pakai global.css lokal -->
-  <link rel="stylesheet" href="/global.css" />
+  <link rel="stylesheet" href="./global.css" />
 
   <!-- Font Inter (opsional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
