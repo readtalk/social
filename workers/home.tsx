@@ -24,7 +24,7 @@ export function HomeHTML(user: { id: string; email: string }) {
         RT
       </div>
       <div>
-        <h1 class="text-2xl font-bold text-gray-900">Settings</h1>
+        <h1 class="text-2xl font-bold text-gray-900">Profile</h1>
         <p class="text-gray-600">${user.email}</p>
       </div>
     </div>
