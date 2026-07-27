@@ -1,6 +1,6 @@
 {
 	"compatibility_date": "2025-10-08",
-	"main": "src/auth.tsx",
+	"main": "workers/app.ts",
 	"name": "social",
 	"upload_source_maps": true,
 	"kv_namespaces": [
