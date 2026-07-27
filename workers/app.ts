@@ -5,20 +5,16 @@ import { createSubjects } from "@openauthjs/openauth/subject";
 import { object, string } from "valibot";
 
 // ============================================================
-// SUBJECTS
-// ============================================================
 const subjects = createSubjects({
   user: object({ id: string() }),
 });
 
 // ============================================================
-// OPEN AUTH ISSUER — Tanpa UI, tanpa routing manual
-// ============================================================
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     // ============================================================
-    // ISSUER — TANPA PasswordUI, TANPA routing manual
-    // ============================================================
+  
     return issuer({
       storage: CloudflareStorage({
         namespace: env.AUTH_STORAGE,
@@ -41,8 +37,7 @@ export default {
 } satisfies ExportedHandler<Env>;
 
 // ============================================================
-// UTILITY — getOrCreateUser
-// ============================================================
+
 async function getOrCreateUser(env: Env, email: string): Promise<string> {
   const result = await env.AUTH_DB.prepare(
     `
@@ -64,8 +59,7 @@ async function getOrCreateUser(env: Env, email: string): Promise<string> {
 }
 
 // ============================================================
-// TYPE DEFINITIONS
-// ============================================================
+
 interface Env {
   AUTH_STORAGE: KVNamespace;
   AUTH_DB: D1Database;
