@@ -4,7 +4,7 @@ import { PasswordProvider } from "@openauthjs/openauth/provider/password";
 import { PasswordUI } from "@openauthjs/openauth/ui/password";
 import { createSubjects } from "@openauthjs/openauth/subject";
 import { object, string } from "valibot";
-import { HomeHTML } from "../src/home";
+import { HomeHTML } from "../app/home";
 
 const subjects = createSubjects({
   user: object({
