@@ -20,7 +20,7 @@ export default {
       url.searchParams.set("redirect_uri", url.origin + "/callback");
       url.searchParams.set("client_id", "your-client-id");
       url.searchParams.set("response_type", "code");
-      url.searchParams.set("state", "/home");
+      url.searchParams.set("state", "/index");
       url.pathname = "/authorize";
       return Response.redirect(url.toString());
     }
@@ -32,7 +32,7 @@ export default {
       });
     }
 
-    if (url.pathname === "/home") {
+    if (url.pathname === "/index") {
       const cookieHeader = request.headers.get("Cookie") || "";
       const cookies = Object.fromEntries(
         cookieHeader.split("; ").filter(Boolean).map((c) => {
