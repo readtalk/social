@@ -1,4 +1,4 @@
-export function HomeHTML(user: { id: string; email: string }) {
+export function IndexHTML(user: { id: string; email: string }) {
   return `<!DOCTYPE html>
 <html>
 <head>
