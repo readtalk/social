@@ -1,3 +1,4 @@
+//
 export function ProfileHTML(user: { id: string; email: string }) {
   return `<!DOCTYPE html>
 <html>
