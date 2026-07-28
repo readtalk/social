@@ -1,11 +1,10 @@
-//
 import { issuer } from "@openauthjs/openauth";
 import { CloudflareStorage } from "@openauthjs/openauth/storage/cloudflare";
 import { PasswordProvider } from "@openauthjs/openauth/provider/password";
 import { PasswordUI } from "@openauthjs/openauth/ui/password";
 import { createSubjects } from "@openauthjs/openauth/subject";
 import { object, string } from "valibot";
-import { HomeHTML } from "../home";
+import { HomeHTML } from "../src/home";
 
 const subjects = createSubjects({
   user: object({
