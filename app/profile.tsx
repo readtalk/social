@@ -2,7 +2,7 @@ export function HomeHTML(user: { id: string; email: string }) {
   return `<!DOCTYPE html>
 <html>
 <head>
-  <title>Homepage</title>
+  <title>Profile</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#FF0000" />
